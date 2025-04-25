@@ -82,7 +82,7 @@ def decrypt_file(file_path, cipher):
 
 def decrypt_from_list(cipher, list_file=ENCRYPTED_LIST_FILE):
     if not os.path.exists(list_file):
-        print(f"❌ Encrypted file list not found: {list_file}")
+        print(f" Encrypted file list not found: {list_file}")
         logging.error(f"Encrypted file list not found: {list_file}")
         return
 
