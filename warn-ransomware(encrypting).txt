@@ -1,5 +1,5 @@
 
-This file contains the warning log of stanalone file for ransomware encryption:
+This file contains the warning log of standalone file for ransomware encryption:
 
 
 This file lists modules PyInstaller was not able to find. This does not
