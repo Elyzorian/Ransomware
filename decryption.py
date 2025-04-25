@@ -111,24 +111,24 @@ def decrypt_from_list(cipher, list_file=ENCRYPTED_LIST_FILE):
 if __name__ == "__main__":
     encryption_key = get_key()
     if not encryption_key:
-        print("❌ Failed to retrieve Fernet key. Exiting.")
+        print(" Failed to retrieve Fernet key. Exiting.")
         sys.exit(1)
 
     try:
         cipher = Fernet(encryption_key)
     except Exception as e:
         logging.error(f"Cipher initialization failed: {e}")
-        print("❌ Invalid Fernet key. Exiting.")
+        print(" Invalid Fernet key. Exiting.")
         sys.exit(1)
 
     root_directory = os.path.abspath(os.sep)
     decrypt_from_list(cipher)
 
-    # ✅ Only after decryption is complete
+    #  Only after decryption is complete
     try:
         with open("decryption_success.lock", "w") as lock:
             lock.write("decryption completed")
-        logging.info("✅ Decryption lock file created.")
+        logging.info(" Decryption lock file created.")
 
         if os.path.exists(ENCRYPTED_LIST_FILE):
             os.remove(ENCRYPTED_LIST_FILE)
