@@ -27,7 +27,7 @@ def get_key():
 
 @app.route("/")
 def home():
-    return "🔑 Ransomware Key Server is Running 🔑"
+    return " Ransomware Key Server is Running "
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
